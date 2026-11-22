@@ -19,7 +19,7 @@ jobs:
 
       - name: Extract source
         run: |
-          unzip -o source.zip -d .
+          unzip -o source-fixed2.zip -d .
           test -f UpNetwork-Browser/android/app/build.gradle.kts
 
       - uses: actions/setup-java@v4
