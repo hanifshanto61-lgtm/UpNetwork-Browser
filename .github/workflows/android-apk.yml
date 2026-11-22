@@ -38,7 +38,10 @@ jobs:
       - uses: gradle/actions/setup-gradle@v4
         with:
           gradle-version: "8.9"
-
+   - name: Set Java target to 17
+        working-directory: UpNetwork-Browser/android/app
+        run: |
+          sed -i 's/VERSION_1_8/VERSION_17/g' build.gradle.kts
       - name: Build APK
         working-directory: UpNetwork-Browser/android
         run: gradle --no-daemon :app:assembleDebug
